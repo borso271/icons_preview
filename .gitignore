@@ -4,3 +4,4 @@ output10.json
 cardgen.env
 *.key
 openai_key.txt
+cardgen/
