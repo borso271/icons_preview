@@ -1,0 +1,101 @@
+Category,Object,Rarity,Fun Fact
+Office,Laptop,Common,"Laptops are portable computers — you can use them anywhere, even on your lap!"
+Office,Pen,Common,"Pens use ink to write — some click, some twist, and some even sparkle!"
+Office,Notebook,Common,"Notebooks are full of blank pages ready for notes, doodles, or ideas!"
+Office,Keyboard,Common,Keyboards help you type — the first one was made over 150 years ago!
+Office,Stapler,Common,Staplers squeeze metal pieces into paper — click and your pages stick!
+Office,Highlighter,Rare,Highlighters glow with bright ink — yellow is the most popular color!
+Office,Paper Clip,Rare,Paper clips bend into loops that hold paper together — they're like tiny hugs!
+Office,Desk Chair,Rare,Desk chairs spin and roll — wheee! That’s wheels and swivel magic!
+Office,Printer,Super Rare,Printers shoot tiny dots of ink on paper — some even print in 3D!
+Office,Coffee Mug,Super Rare,Coffee mugs keep drinks warm — and some have funny faces or sayings on them!
+School,Pencil,Common,"Pencils write with graphite, not lead — and they can draw a line 35 miles long!"
+School,Backpack,Common,Backpacks are like turtle shells for your stuff — zip zip!
+School,Book,Common,Books are full of stories AND pictures — what will you discover today?
+School,Crayon,Common,Crayons were invented over 100 years ago. So many colors to choose from!
+School,Glue Stick,Common,Glue sticks are solid — but they go on smooth and sticky like magic!
+School,Ruler,Rare,"Rulers help you measure — one foot has 12 inches, like 12 marching ants!"
+School,Lunchbox,Rare,Lunchboxes keep your snacks safe — and sometimes they even have superheroes!
+School,Eraser,Rare,Erasers clean up pencil mistakes — it’s like a magic undo button for your paper!
+School,Whiteboard,Super Rare,"Whiteboards wipe clean so you can draw, erase, and draw again — it’s like a magic wall!"
+School,Classroom Globe,Super Rare,Globes are like mini-Earths you can spin — let’s find where you live!
+Garden,Daisy,Common,Daisies close up at night like they’re going to sleep. Zzz! 
+Garden,Rock,Common,"Pebbles are tiny rocks — some are smooth, some are bumpy. Let’s find a shiny one!"
+Garden,Leaf,Common,Leaves are like food factories for plants. Whoa — they make sugar from sunlight!
+Garden,Stick,Common,"Sticks can be wands, drumsticks, or walking buddies — what will you make yours?"
+Garden,Watering Can,Common,"Watering cans help plants drink — glug glug, grow grow!"
+Garden,Butterfly,Rare,Butterflies taste with their feet! Isn’t that flutter-fantastic?
+Garden,Snail,Rare,Snails carry their homes on their backs—slow and steady!
+Garden,Ladybug,Rare,Ladybugs can have up to seven spots—count them if you can!
+Garden,Birdhouse,Super Rare,"Birdhouses are tiny homes for birds — tweet tweet, move-in ready!"
+Garden,Garden Gnome,Super Rare,"Garden gnomes are silly statues that love to hide in plants. Say hello, little friend!"
+Playground,Swing,Common,Swings use gravity and momentum to keep you moving — the first ones were made of vines!
+Playground,Slide,Common,Slides work because gravity pulls you down — wheee! 
+Playground,Ball,Common,Balls have been used in games for thousands of years — even ancient Egyptians played with them!
+Playground,Sandbox,Common,Sandboxes let you dig and build — did you know sand is made from tiny pieces of rock?
+Playground,Seesaw,Common,Seesaws use a lever — one of the six simple machines! They teach balance and teamwork.
+Playground,Hula Hoop,Rare,Bouncers use springs or air pressure to bounce you back — boing! They're fun and full of physics.
+Playground,Frisbee,Rare,Frisbees were inspired by pie tins tossed in the air — the first plastic ones came out in the 1950s!
+Playground,Bubbles,Rare,"Hula hoops go back over 3,000 years — people in ancient Greece used hoops for exercise!"
+Playground,Climbing Frame,Super Rare,Climbing frames help build your muscles and coordination — they're like jungle gyms for your body!
+Playground,Bouncer,Super Rare,Bouncers use strong springs or rubber to help you bounce up and down!
+Animals,Dog,Common,Dogs can learn over 100 words and love to play fetch — woof woof!
+Animals,Cat,Common,Cats use their whiskers to feel their way around — meow-zing!
+Animals,Bird,Common,"Some birds can sing songs or mimic sounds — tweet-tweet, what was that?"
+Animals,Fly,Common,Flies can walk upside down using tiny sticky feet — they’re like wall climbers!
+Animals,Fish,Common,"Goldfish have memories longer than 3 seconds — up to months, actually!"
+Animals,Rabbit,Rare,Rabbits can hop up to three feet high — boing! That’s like jumping over a Blippi box!
+Animals,Frog,Rare,"Frogs drink water through their skin — ribbit, that’s weird and wonderful!"
+Animals,Ladybug,Rare,Ladybugs can eat up to 50 aphids a day — they’re garden superheroes!
+Animals,Duck,Super Rare,Ducks have waterproof feathers — and their feet don’t feel cold in icy water!
+Animals,Squirrel,Super Rare,Squirrels use their fluffy tails for balance and shade — and they love to hide snacks!
+Transportation,Car,Common,Cars have four wheels and go vroom — some even run on electricity!
+Transportation,Bus,Common,Buses carry lots of people — some even have two floors like in London!
+Transportation,Bicycle,Common,Bicycles have two wheels and pedals — and you can ride without fuel!
+Transportation,Scooter,Common,Scooters zoom with a push of your foot — balance and go!
+Transportation,Train,Common,Trains ride on tracks and can carry tons of people or cargo!
+Transportation,Fire Truck,Rare,Fire trucks carry big ladders and water hoses — and they go NEE-NAW!
+Transportation,Tractor,Rare,"Tractors help farms grow food — they’re slow, but super strong!"
+Transportation,Ice Cream Truck,Rare,Ice cream trucks play fun music and bring tasty treats — they’re the yummiest vehicles around!
+Transportation,Plane,Super Rare,Planes have wings and jet engines — they soar high above the clouds and cross oceans!
+Transportation,Boat,Super Rare,Boats float using something called buoyancy — even big boats can stay on top of water!
+House,Toothbrush,Common,Toothbrushes keep your teeth squeaky clean — even astronauts use them in space!
+House,Towel,Common,"Towels soak up water because of tiny loops in the fabric — drip, dry, done!"
+House,Lamp,Common,"Lamps turn electricity into light — click, and the room lights up!"
+House,Chair,Common,Chairs were invented thousands of years ago — some people still sit on the floor!
+House,Cushion,Common,Cushions make sitting comfier — and some even have buttons just for looks!
+House,Remote Control,Rare,Remote controls use invisible waves to talk to your TV — zap!
+House,Fan,Rare,Fans spin their blades super fast to move air — they keep you cool like a breeze!
+House,Clock,Rare,Clocks tick and tock to show time — some even have little cuckoo birds!
+House,Painting,Super Rare,Paintings tell stories with colors and shapes — some are hundreds of years old!
+House,Plant Pot,Super Rare,Plants live in pots and slurp up water from the soil — even indoors they love to grow!
+Clothing,T-Shirt,Common,T-shirts are called that because they look like the letter 'T' when laid flat!
+Clothing,Socks,Common,Socks help keep your feet warm — and some even have silly faces!
+Clothing,Shoes,Common,"Shoes protect your feet and make fun sounds — stomp, stomp, stomp!"
+Clothing,Hat,Common,"Hats can keep you cool, warm, or shady — some even have pom-poms!"
+Clothing,Jacket,Common,Jackets trap heat to keep you toasty — zip up and feel the cozy!
+Clothing,Scarf,Rare,Scarves were used by ancient soldiers to stay dry and look sharp!
+Clothing,Gloves,Rare,Gloves keep your fingers warm — they’re like tiny jackets for your hands!
+Clothing,Sunglasses,Rare,Sunglasses protect your eyes from bright light — cool and smart!
+Clothing,Crown,Super Rare,"Crowns are worn by kings, queens, and dress-up stars — shiny and royal!"
+Clothing,Umbrella,Super Rare,"Umbrellas were invented over 2,000 years ago — and they’re like portable roofs!"
+Living Room,Sofa,Common,Sofas are super comfy — and the word comes from the Arabic word for 'bench'!
+Living Room,TV,Common,TV stands for 'television' — it means seeing things from far away!
+Living Room,Lamp,Common,Lamps light up dark spaces — some even change colors or dim!
+Living Room,Remote,Common,Remotes send invisible signals to control your TV — zap!
+Living Room,Rug,Common,Rugs make floors cozy — some are even made by hand!
+Living Room,Bookshelf,Rare,"Bookshelves hold stories, facts, and adventures — ready for reading time!"
+Living Room,Console,Rare,Consoles are machines that play video games — they plug into your TV for big screen fun!
+Living Room,Blanket,Rare,Blankets trap body heat to keep you warm — cozy up like a burrito!
+Living Room,Candle,Super Rare,"Candles melt wax to make light — the earliest ones were used 5,000 years ago!"
+Living Room,Record Player,Super Rare,Record players spin flat discs to make music — that’s sound made with a needle!
+Toys & Crafts,Teddy Bear,Common,Teddy bears were named after President Teddy Roosevelt — snuggly and historic!
+Toys & Crafts,Toy Car,Common,Toy cars zoom with tiny wheels — some even have doors that open!
+Toys & Crafts,Crayon,Common,Crayons are made of wax and color — they melt if they get too warm!
+Toys & Crafts,LEGO,Common,LEGO bricks click together and were invented in Denmark — the name means 'play well'!
+Toys & Crafts,Paintbrush,Common,"Paintbrushes have soft bristles — perfect for swirls, lines, and splats!"
+Toys & Crafts,Doll,Rare,Dolls have been around for thousands of years — even kids in ancient Egypt had them!
+Toys & Crafts,Puzzle Piece,Rare,Each puzzle piece is a clue — connect them all to see the big picture!
+Toys & Crafts,Stickers,Rare,Stickers come in all shapes — some even smell like fruit!
+Toys & Crafts,Magic Wand,Super Rare,Magic wands are for pretend play — whoosh! You’re a wizard now!
+Toys & Crafts,Paint Brush,Super Rare,"Paint brushes help you turn colors into pictures — dab, swirl, and splatter!"

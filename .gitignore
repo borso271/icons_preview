@@ -1,0 +1,6 @@
+test.json
+output.json
+output10.json
+cardgen.env
+*.key
+openai_key.txt

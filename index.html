@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Icon Gallery</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: #f7f7f8;
+    }
+    h1 { text-align: center; margin-bottom: 2rem; }
+    /* responsive grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1.5rem;
+    }
+    figure {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+      padding: 1rem;
+      text-align: center;
+    }
+    img { width: 100%; height: auto; margin-bottom: 0.75rem; }
+    .name { font-weight: 600; }
+    .category { font-size: .85rem; color: #666; }
+  </style>
+</head>
+<body>
+
+<h1>Icon Gallery</h1>
+<div id="gallery" class="grid"></div>
+
+<script>
+/* ── Paste your list here ───────────────────────────────────────── */
+const icons = [
+    {
+        "fun_fact": "Laptops have tiny brains called processors that help them think really fast!",
+        "short_description": "Laptops are portable computers that can help you play games and learn new things. They can fold up just like a book!",
+        "rarity": "common",
+        "category": "office",
+        "name": "Laptop"
+      },
+      {
+        "fun_fact": "Pens use ink to write—some click, some twist, and some even sparkle!",
+        "short_description": "Pens are used to write and draw. They come in many colors.",
+        "rarity": "common",
+        "category": "office",
+        "name": "Pen"
+      },
+      {
+        "fun_fact": "Notebooks can have lined pages or blank ones, perfect for drawings and stories!",
+        "short_description": "A notebook is a book with paper inside. You can write or draw in it!",
+        "rarity": "common",
+        "category": "school",
+        "name": "Notebook"
+      },
+      {
+        "fun_fact": "Keyboards can have over 100 keys to help us type fast!",
+        "short_description": "A keyboard helps you type letters on a computer. It looks like a piano!",
+        "rarity": "common",
+        "category": "office",
+        "name": "Computer Keyboard"
+      },
+      {
+        "fun_fact": "Staplers can stitch up to 70 pages together with a single punch!",
+        "short_description": "A stapler helps you keep papers together by using metal clips.",
+        "rarity": "common",
+        "category": "office",
+        "name": "Stapler"
+      },
+      {
+        "fun_fact": "Highlighters glow because they have special fluorescent ink!",
+        "short_description": "A highlighter is a bright pen used to mark important words or pictures.",
+        "rarity": "common",
+        "category": "school",
+        "name": "Highlighter"
+      },
+      {
+        "fun_fact": "Paper clips can hold lots of papers together—over 100 years old!",
+        "short_description": "Paper clips are tiny helpers that keep papers together. They're shiny and colorful!",
+        "rarity": "common",
+        "category": "office",
+        "name": "Paper Clip"
+      },
+      {
+        "fun_fact": "Chairs have four legs, but some can spin on wheels!",
+        "short_description": "A desk chair is a seat for working or studying. It can roll and spin!",
+        "rarity": "common",
+        "category": "office",
+        "name": "Desk Chair"
+      },
+      {
+        "fun_fact": "Printers can print pictures and papers with colors like magic!",
+        "short_description": "A printer makes copies of what's on a computer. It uses paper and ink.",
+        "rarity": "common",
+        "category": "office",
+        "name": "Printer"
+      },
+      {
+        "fun_fact": "A mug can hold hot cocoa or magical morning coffee!",
+        "short_description": "This is a cup with a handle to drink from. It's great for hot drinks!",
+        "rarity": "common",
+        "category": "house",
+        "name": "Coffee Mug"
+      },
+    {
+      "fun_fact": "Pencils can write 45,000 words before needing a break!",
+      "short_description": "A pencil lets you draw and write. It's long, thin, and has an eraser.",
+      "rarity": "common",
+      "category": "school",
+      "name": "Pencil"
+    },
+    {
+      "fun_fact": "Backpacks can carry treasures, books, and even your favorite snacks!",
+      "short_description": "A backpack is a bag worn on your back. It holds all your school supplies!",
+      "rarity": "common",
+      "category": "school",
+      "name": "Backpack"
+    },
+    {
+      "fun_fact": "Books can take you anywhere—even to dinosaur lands!",
+      "short_description": "A book has pages with words and pictures. You can learn or enjoy stories.",
+      "rarity": "common",
+      "category": "school",
+      "name": "Book"
+    },
+    {
+      "fun_fact": "Crayons can have over 120 different colors—wow, that's a rainbow!",
+      "short_description": "Crayons are colorful sticks used to draw and color. They're easy to hold!",
+      "rarity": "common",
+      "category": "toys & crafts",
+      "name": "Crayon"
+    },
+    {
+      "fun_fact": "Glue sticks are like magic crayons that make things stick together!",
+      "short_description": "A glue stick is used to stick paper and crafts. Just roll and glue!",
+      "rarity": "common",
+      "category": "toys & crafts",
+      "name": "Glue Stick"
+    },
+    {
+      "fun_fact": "A ruler helps measure things and make lines super straight!",
+      "short_description": "A ruler is used to measure how long things are.",
+      "rarity": "common",
+      "category": "school",
+      "name": "Ruler"
+    },
+    {
+      "fun_fact": "Lunchboxes can be shaped like your favorite cartoons or superheroes!",
+      "short_description": "A lunchbox holds your yummy food for school. It keeps everything safe!",
+      "rarity": "common",
+      "category": "school",
+      "name": "Lunchbox"
+    },
+    {
+      "fun_fact": "Erasers love to fix pencil mistakes like magic!",
+      "short_description": "Erasers help remove pencil marks. They're like magic fixers for your writing!",
+      "rarity": "common",
+      "category": "school",
+      "name": "Eraser"
+    },
+    {
+      "fun_fact": "Whiteboards can be cleaned with a magic eraser!",
+      "short_description": "A whiteboard is a big white surface. You can draw and erase on it!",
+      "rarity": "common",
+      "category": "school",
+      "name": "Whiteboard"
+    },
+    {
+      "fun_fact": "Globes help us see the whole Earth like a tiny planet!",
+      "short_description": "A globe shows us where countries and oceans are. It spins!",
+      "rarity": "common",
+      "category": "school",
+      "name": "Classroom Globe"
+    },
+    {
+      "fun_fact": "Daisies can close their petals at night—what a sleepy flower!",
+      "short_description": "A daisy is a cute flower with white petals and a yellow center.",
+      "rarity": "common",
+      "category": "garden",
+      "name": "Daisy"
+    },
+    {
+      "fun_fact": "Some rocks have crystals hidden inside—like nature's little surprise!",
+      "short_description": "Rocks are hard and come in different shapes and sizes. You can find them almost anywhere!",
+      "rarity": "common",
+      "category": "garden",
+      "name": "Rock"
+    },
+    {
+      "fun_fact": "Leaves turn sunlight into food—it's like magic for trees!",
+      "short_description": "Leaves grow on trees and plants. They can be green, red, or yellow!",
+      "rarity": "common",
+      "category": "garden",
+      "name": "Leaf"
+    },
+    {
+      "fun_fact": "Did you know some bugs like to hide as stick-lookalikes?",
+      "short_description": "Sticks are long and hard, great for building or playing pretend!",
+      "rarity": "common",
+      "category": "garden",
+      "name": "Stick"
+    },
+    {
+      "fun_fact": "Watering cans have sprouts to sprinkle water gently like rain!",
+      "short_description": "A watering can helps us water plants! Pour water through the spout.",
+      "rarity": "common",
+      "category": "garden",
+      "name": "Watering Can"
+    },
+    {
+      "fun_fact": "Butterflies taste with their feet to find yummy leaves to eat!",
+      "short_description": "Butterflies are colorful insects that fly around flowers. They have big wings!",
+      "rarity": "common",
+      "category": "garden",
+      "name": "Butterfly"
+    },
+    {
+      "fun_fact": "Snails leave a shiny trail behind them as they move!",
+      "short_description": "Snails are little animals with shells on their backs. They move very slowly.",
+      "rarity": "common",
+      "category": "garden",
+      "name": "Snail"
+    },
+    {
+      "fun_fact": "Ladybugs can eat up to 5,000 bugs in their lifetime!",
+      "short_description": "Ladybugs are small, red insects with black spots. They love to eat pesky bugs.",
+      "rarity": "common",
+      "category": "garden",
+      "name": "Ladybug"
+    },
+    {
+      "fun_fact": "Birdhouses give birds a cozy home to lay eggs.",
+      "short_description": "A birdhouse is a little house for birds. They stay safe and cozy inside.",
+      "rarity": "common",
+      "category": "garden",
+      "name": "Birdhouse"
+    },
+    {
+      "fun_fact": "Garden gnomes bring good luck to gardens, like tiny magical friends!",
+      "short_description": "A garden gnome is a small statue that lives in gardens and brings fun.",
+      "rarity": "common",
+      "category": "garden",
+      "name": "Garden Gnome"
+    },
+    {
+      "fun_fact": "Swings let you feel like you're flying! Just hold tight and kick your feet!",
+      "short_description": "A swing is a seat that hangs from ropes or chains. It's super fun to swing high!",
+      "rarity": "common",
+      "category": "playground",
+      "name": "Swing (playground)"
+    },
+    {
+      "fun_fact": "Slides make going down super fun—woohoo! Some are straight, others twisty.",
+      "short_description": "Slides are fun surfaces to quickly slide down. They can be found in playgrounds.",
+      "rarity": "common",
+      "category": "playground",
+      "name": "Slide (playground)"
+    },
+    {
+      "fun_fact": "Balls bounce because they store energy and then release it—boing, boing!",
+      "short_description": "Balls are round toys you can throw, catch, or kick. They're lots of fun!",
+      "rarity": "common",
+      "category": "toys & crafts",
+      "name": "Ball"
+    },
+    {
+      "fun_fact": "Sandboxes were first used over 100 years ago for playtime!",
+      "short_description": "A sandbox is a fun place where kids can play with sand. You can build castles and dig holes!",
+      "rarity": "common",
+      "category": "playground",
+      "name": "Sandbox"
+    },
+    {
+      "fun_fact": "A seesaw is like a balance beam that rocks back and forth!",
+      "short_description": "A seesaw is a long board that goes up and down. Friends can play on it together!",
+      "rarity": "common",
+      "category": "playground",
+      "name": "Seesaw"
+    },
+    {
+      "fun_fact": "Hula hoops can glow in the dark and even play music!",
+      "short_description": "A hula hoop is a big round toy you can spin around your waist. It's super fun!",
+      "rarity": "common",
+      "category": "toys & crafts",
+      "name": "Hula Hoop"
+    },
+    {
+      "fun_fact": "Frisbees can fly over 200 yards when thrown by pros!",
+      "short_description": "A frisbee is a round, flying disc that you can throw and catch with friends.",
+      "rarity": "common",
+      "category": "playground",
+      "name": "Frisbee"
+    },
+    {
+      "fun_fact": "Bubbles are just air trapped in a soapy film!",
+      "short_description": "Bubbles are round, soapy things you can blow and watch float away. They're so fun!",
+      "rarity": "common",
+      "category": "toys & crafts",
+      "name": "Bubbles"
+    },
+    {
+      "fun_fact": "Climbing frames help make you taller and stronger with fun and play!",
+      "short_description": "A climbing frame is a structure to climb and play on. It's super fun!",
+      "rarity": "common",
+      "category": "playground",
+      "name": "Climbing Frame"
+    },
+    {
+      "fun_fact": "Bouncers let you jump super high—it's like flying on the ground!",
+      "short_description": "A bouncer is a fun thing to jump on. It helps you bounce up and down!",
+      "rarity": "common",
+      "category": "playground",
+      "name": "Bouncer (playground)"
+    },
+    {
+      "fun_fact": "Dogs can hear sounds four times farther than humans can!",
+      "short_description": "A dog is a fun, furry friend. They love to play and wag their tails!",
+      "rarity": "common",
+      "category": "animals",
+      "name": "Dog"
+    },
+    {
+      "fun_fact": "Cats can jump up to six times their length!",
+      "short_description": "Cats are furry animals with whiskers and tails. They love to purr and nap.",
+      "rarity": "common",
+      "category": "animals",
+      "name": "Cat"
+    },
+    {
+      "fun_fact": "Birds can sing sweet songs and fly high in the sky!",
+      "short_description": "Birds have wings and feathers. They love to chirp and fly!",
+      "rarity": "common",
+      "category": "animals",
+      "name": "Bird"
+    },
+    {
+      "fun_fact": "Flies taste food with their feet—tickle-tickle!",
+      "short_description": "Flies are tiny insects that love to buzz around. They have wings and big eyes!",
+      "rarity": "common",
+      "category": "garden",
+      "name": "Fly"
+    },
+    {
+      "fun_fact": "Fish have gills to breathe underwater without coming up for air—so cool!",
+      "short_description": "Fish live in water and come in many colors and sizes. They have fins to swim.",
+      "rarity": "common",
+      "category": "animals",
+      "name": "Fish"
+    },
+    {
+      "fun_fact": "Rabbits can hop super fast, up to 45 miles per hour!",
+      "short_description": "Rabbits are fluffy animals with long ears and love to hop around.",
+      "rarity": "common",
+      "category": "animals",
+      "name": "Rabbit"
+    },
+    {
+      "fun_fact": "Frogs drink through their skin!",
+      "short_description": "Frogs are jumpy animals that live in ponds. They make funny ribbit sounds!",
+      "rarity": "common",
+      "category": "animals",
+      "name": "Frog"
+    },
+    {
+      "fun_fact": "Ladybugs can have up to 15 spots on their backs!",
+      "short_description": "Ladybugs are small, colorful insects with tiny black spots. They love to eat garden pests.",
+      "rarity": "common",
+      "category": "garden",
+      "name": "Ladybug"
+    },
+    {
+      "fun_fact": "Ducks have waterproof feathers so they stay dry while swimming!",
+      "short_description": "Ducks are birds that love to swim and quack. They have webbed feet!",
+      "rarity": "common",
+      "category": "animals",
+      "name": "Duck"
+    },
+    {
+      "fun_fact": "Squirrels use their tails as umbrellas when it rains!",
+      "short_description": "Squirrels are small, bushy-tailed animals that love to climb trees. They gather nuts!",
+      "rarity": "common",
+      "category": "animals",
+      "name": "Squirrel"
+    },
+    {
+      "fun_fact": "Cars can drive super fast or slow—they even come in lots of colors!",
+      "short_description": "A car has wheels and a steering wheel. It can take you places!",
+      "rarity": "common",
+      "category": "transportation",
+      "name": "Car"
+    },
+    {
+      "fun_fact": "Buses can carry lots of people, like a giant moving hug!",
+      "short_description": "A bus is a big vehicle that takes people to places. It's like a car, but much bigger!",
+      "rarity": "common",
+      "category": "transportation",
+      "name": "Bus"
+    },
+    {
+      "fun_fact": "Did you know bikes can have one, two, or even three wheels?",
+      "short_description": "Bicycles have pedals and handlebars you use to ride around. They're great for fun and exercise!",
+      "rarity": "common",
+      "category": "transportation",
+      "name": "Bicycle"
+    },
+    {
+      "fun_fact": "Did you know scooters help you zoom around just like a superhero?",
+      "short_description": "A scooter is a ride-on toy with two wheels. You can push with your feet!",
+      "rarity": "common",
+      "category": "transportation",
+      "name": "Scooter"
+    },
+    {
+      "fun_fact": "Trains can chug up to 200 miles per hour! Zoom zoom!",
+      "short_description": "Trains are big, fast vehicles that travel on tracks. They carry people and goods.",
+      "rarity": "common",
+      "category": "transportation",
+      "name": "Train"
+    },
+    {
+      "fun_fact": "Fire trucks have special sirens to zoom through traffic safely!",
+      "short_description": "A fire truck helps put out fires. It carries firefighters and water.",
+      "rarity": "common",
+      "category": "transportation",
+      "name": "Fire Truck"
+    },
+    {
+      "fun_fact": "Tractors have huge wheels to drive over bumpy fields with ease!",
+      "short_description": "Tractors are big machines that help farmers. They pull heavy things and plow fields.",
+      "rarity": "common",
+      "category": "transportation",
+      "name": "Tractor"
+    },
+    {
+      "fun_fact": "Ice cream trucks play music to let you know they’re coming—yum!",
+      "short_description": "Ice cream trucks sell tasty treats and play fun music. They visit neighborhoods on hot days!",
+      "rarity": "rare",
+      "category": "transportation",
+      "name": "Ice Cream Truck"
+    },
+    {
+      "fun_fact": "Planes can loop the loop and fly upside down—how cool is that?",
+      "short_description": "Planes are big flying machines. They take us on long trips in the sky!",
+      "rarity": "common",
+      "category": "transportation",
+      "name": "Plane"
+    },
+    {
+      "fun_fact": "Boats float because they push water away!",
+      "short_description": "A boat is a fun way to travel on water. It can be big or small!",
+      "rarity": "common",
+      "category": "transportation",
+      "name": "Boat"
+    },
+    {
+      "fun_fact": "Toothbrushes keep our smiles shiny and bright, just like magic wands!",
+      "short_description": "A toothbrush helps clean your teeth. Use it with toothpaste for a shiny smile!",
+      "rarity": "common",
+      "category": "house",
+      "name": "Toothbrush"
+    },
+    {
+      "fun_fact": "Frogs are great at absorbing water with their skin—just like a towel!",
+      "short_description": "A towel is soft and helps you dry off after a bath or swim.",
+      "rarity": "common",
+      "category": "house",
+      "name": "Towel"
+    },
+    {
+      "fun_fact": "Did you know lamps brighten rooms and sometimes change colors?",
+      "short_description": "A lamp lights up a room. You turn it on with a switch!",
+      "rarity": "common",
+      "category": "living room",
+      "name": "Lamp"
+    },
+    {
+      "fun_fact": "Chairs have been used for thousands of years to sit comfortably!",
+      "short_description": "A chair is a seat with four legs and a back. It's great for sitting!",
+      "rarity": "common",
+      "category": "living room",
+      "name": "Chair"
+    },
+    {
+      "fun_fact": "Cushions were once stuffed with hay or feathers—how comfy and cozy!",
+      "short_description": "A cushion is a soft pad you can sit on. It makes couches more comfy!",
+      "rarity": "common",
+      "category": "living room",
+      "name": "Cushion"
+    },
+    {
+      "fun_fact": "Remote controls send magical signals to change the TV channel. Zap!",
+      "short_description": "A remote control helps you change the TV channel. It has buttons!",
+      "rarity": "common",
+      "category": "living room",
+      "name": "Remote Control"
+    },
+    {
+      "fun_fact": "Fans can spin fast or slow to keep us cool like a breeze!",
+      "short_description": "A fan makes the air move and keeps us cool. It's like a mini wind!",
+      "rarity": "common",
+      "category": "house",
+      "name": "Fan"
+    },
+    {
+      "fun_fact": "Clocks help us tell time—tick tock, round the clock!",
+      "short_description": "A clock tells the time. It has numbers and hands to point.",
+      "rarity": "common",
+      "category": "house",
+      "name": "Clock"
+    },
+    {
+      "fun_fact": "Paintings can tell stories with colors and shapes!",
+      "short_description": "Paintings are cool pictures made with colors on paper or canvas.",
+      "rarity": "common",
+      "category": "toys & crafts",
+      "name": "Painting"
+    },
+    {
+      "fun_fact": "Plants love cozy pots to grow big and strong!",
+      "short_description": "A plant pot holds soil for growing plants. It's like a tiny garden!",
+      "rarity": "common",
+      "category": "garden",
+      "name": "Plant Pot"
+    },
+    {
+      "fun_fact": "T-Shirts can have funny prints or glow in the dark designs!",
+      "short_description": "A T-shirt is a piece of clothing with short sleeves. It's soft and comfy!",
+      "rarity": "common",
+      "category": "clothing",
+      "name": "T-Shirt"
+    },
+    {
+      "fun_fact": "Socks keep your feet warm and cozy, like a hug for your toes!",
+      "short_description": "Socks are soft cloth tubes for your feet. They come in lots of colors!",
+      "rarity": "common",
+      "category": "clothing",
+      "name": "Socks"
+    },
+    {
+      "fun_fact": "Did you know shoes have been around for thousands of years?",
+      "short_description": "Shoes protect your feet and look cool! They come in all colors.",
+      "rarity": "common",
+      "category": "clothing",
+      "name": "Shoes"
+    },
+    {
+      "fun_fact": "Hats can show you’re cool, keep you warm, or make you a magician!",
+      "short_description": "A hat is something you wear on your head. It can keep you warm or cool!",
+      "rarity": "common",
+      "category": "clothing",
+      "name": "Hat"
+    },
+    {
+      "fun_fact": "Jackets can have zippers, buttons, or even magic Velcro strips!",
+      "short_description": "A jacket keeps you warm when it's chilly. It's like a cozy hug.",
+      "rarity": "common",
+      "category": "clothing",
+      "name": "Jacket"
+    },
+    {
+      "fun_fact": "Scarves can keep you warm and some even have fun patterns!",
+      "short_description": "A scarf is a soft piece of clothing you wear around your neck. It keeps you warm.",
+      "rarity": "common",
+      "category": "clothing",
+      "name": "Scarf"
+    },
+    {
+      "fun_fact": "Gloves keep your hands cozy and even help superheroes hide their identities!",
+      "short_description": "Gloves are like tiny jackets for your hands. They keep you warm or safe!",
+      "rarity": "common",
+      "category": "clothing",
+      "name": "Gloves"
+    },
+    {
+      "fun_fact": "Sunglasses were first made to block bright sunlight for Inuit people.",
+      "short_description": "Sunglasses protect your eyes from the bright sun. They come in cool shapes!",
+      "rarity": "common",
+      "category": "clothing",
+      "name": "Sunglasses"
+    },
+    {
+      "fun_fact": "Crowns are symbols of power and royalty. In some cultures, even animals can wear crowns!",
+      "short_description": "A crown is a shiny hat worn by kings and queens. It makes them look royal.",
+      "rarity": "rare",
+      "category": "clothing",
+      "name": "Crown"
+    },
+    {
+      "fun_fact": "Umbrellas were once used to show wealth and status!",
+      "short_description": "Umbrellas keep you dry in the rain. They open wide like a big flower!",
+      "rarity": "common",
+      "category": "clothing",
+      "name": "Umbrella"
+    },
+    {
+      "fun_fact": "Sofas can turn into beds! Perfect for a cozy sleepover.",
+      "short_description": "A sofa is a big, comfy seat. You can sit or lie on it.",
+      "rarity": "common",
+      "category": "living room",
+      "name": "Sofa"
+    },
+    {
+      "fun_fact": "TVs show moving pictures using tiny lights called pixels!",
+      "short_description": "A TV shows your favorite cartoons and movies with sound and pictures.",
+      "rarity": "common",
+      "category": "living room",
+      "name": "TV"
+    },
+    {
+      "fun_fact": "Lamps turn electricity into light, like magic for your room!",
+      "short_description": "Lamps make rooms bright. You can turn them on and off easily.",
+      "rarity": "common",
+      "category": "living room",
+      "name": "Lamp"
+    },
+    {
+      "fun_fact": "Remotes send signals like magic wands to control gadgets!",
+      "short_description": "A remote helps you change channels on the TV. It has buttons to press!",
+      "rarity": "common",
+      "category": "living room",
+      "name": "Remote Control"
+    },
+    {
+      "fun_fact": "Rugs make floors cozy and sometimes have fun, colorful patterns!",
+      "short_description": "Rugs are soft mats that cover the floor. They come in many colors and shapes.",
+      "rarity": "common",
+      "category": "living room",
+      "name": "Rug"
+    },
+    {
+      "fun_fact": "Bookshelves keep your books cozy and neat—like a mini library at home!",
+      "short_description": "A bookshelf holds your books, keeping them tidy and easy to find.",
+      "rarity": "common",
+      "category": "living room",
+      "name": "Bookshelf"
+    },
+    {
+      "fun_fact": "Video game consoles play games, watch movies, and even stream shows!",
+      "short_description": "A console lets you play video games on your TV. How fun!",
+      "rarity": "common",
+      "category": "toys & crafts",
+      "name": "Videogame Console"
+    },
+    {
+      "fun_fact": "Blankets keep us cozy and warm on chilly nights—like a big, soft hug!",
+      "short_description": "A blanket is soft and keeps you warm. It's great for snuggling!",
+      "rarity": "common",
+      "category": "house",
+      "name": "Blanket"
+    },
+    {
+      "fun_fact": "Candles can be made from beeswax, soy, or even crayons!",
+      "short_description": "Candles are sticks of wax with a wick that can be lit to make light. They also smell nice!",
+      "rarity": "common",
+      "category": "house",
+      "name": "Candle"
+    },
+    {
+      "fun_fact": "Record players spin vinyl discs to make music sounds!",
+      "short_description": "A record player plays music from vinyl records. It uses a needle to read grooves.",
+      "rarity": "rare",
+      "category": "living room",
+      "name": "Record Player"
+    },
+    {
+      "fun_fact": "Teddy bears got their name from President Theodore 'Teddy' Roosevelt!",
+      "short_description": "Teddy bears are soft, cuddly toys. They love hugs and snuggles!",
+      "rarity": "common",
+      "category": "toys & crafts",
+      "name": "Teddy Bear"
+    },
+    {
+      "fun_fact": "Some toy cars are modeled after real race cars—vroom, zoom!",
+      "short_description": "A toy car is fun to zoom around. You can pretend it's on a racetrack!",
+      "rarity": "common",
+      "category": "toys & crafts",
+      "name": "Toy Car"
+    },
+    {
+      "fun_fact": "Crayons can melt in the sun and make colorful art!",
+      "short_description": "Crayons are colorful sticks for drawing. You use them to color pictures!",
+      "rarity": "common",
+      "category": "toys & crafts",
+      "name": "Crayon"
+    },
+    {
+      "fun_fact": "LEGO bricks snap together and create endless fun with just six bricks!",
+      "short_description": "LEGO bricks are colorful blocks that you can use to build anything you imagine!",
+      "rarity": "common",
+      "category": "toys & crafts",
+      "name": "LEGO"
+    },
+    {
+      "fun_fact": "Wow! Paintbrushes help your creativity come alive with colorful strokes!",
+      "short_description": "A paintbrush is used to make art by spreading paint on surfaces. It has soft bristles!",
+      "rarity": "common",
+      "category": "toys & crafts",
+      "name": "Paintbrush"
+    },
+    {
+      "fun_fact": "Ancient dolls were made of clay and wood!",
+      "short_description": "A doll is a fun toy that looks like a person. You can dress it up and play with it!",
+      "rarity": "common",
+      "category": "toys & crafts",
+      "name": "Doll"
+    },
+    {
+      "fun_fact": "Puzzles teach us shapes and patience. Piece by piece, a picture appears!",
+      "short_description": "A puzzle piece fits with others to make a big picture. It's like a fun mystery!",
+      "rarity": "common",
+      "category": "toys & crafts",
+      "name": "Puzzle Piece"
+    },
+    {
+      "fun_fact": "Stickers can be scratch-and-sniff or even change colors with sunlight!",
+      "short_description": "Stickers are like colorful, sticky friends you can put on things! They make everything fun.",
+      "rarity": "common",
+      "category": "toys & crafts",
+      "name": "Stickers"
+    },
+    {
+      "fun_fact": "Magic wands are tools for wizards and fairies—abracadabra and poof!",
+      "short_description": "A magic wand is a stick that wizards use to do magic! It sparkles and shines.",
+      "rarity": "rare",
+      "category": "toys & crafts",
+      "name": "Magic Wand"
+    },
+    {
+      "fun_fact": "Paint brushes can tickle when they swish across your palm!",
+      "short_description": "A paint brush is used to make colorful art. It helps spread the paint!",
+      "rarity": "common",
+      "category": "toys & crafts",
+      "name": "Paint Brush"
+    }
+  ]
+/* ──────────────────────────────────────────────────────────────── */
+
+
+
+
+/* helpers */
+const slug = str =>
+  str.toLowerCase()                   // lower-case
+     .replace(/[^a-z0-9]+/g, '_')     // any run of non-a-z-0-9 ⇒ “_”
+     .replace(/^_+|_+$/g, '');        // trim leading / trailing “_”
+
+const gallery = document.getElementById('gallery');
+
+icons.forEach(icon => {
+  const fileName = `${slug(icon.name)}_${slug(icon.category)}.png`;   // e.g. crayon_toys_crafts.png
+  const figure   = document.createElement('figure');
+
+  figure.innerHTML = `
+    <img src="images/${fileName}" alt="${icon.name} icon">
+    <figcaption>
+      <span class="name">${icon.name}</span><br>
+      <span class="category">${icon.category}</span>
+    </figcaption>
+  `;
+  gallery.appendChild(figure);
+});
+</script>
+
+</body>
+</html>
